@@ -8,12 +8,54 @@ It uses Next's newer [App Router](https://nextjs.org/docs/app) and [Server Compo
 
 You can use this as a quick jumping-off point to build a web app using Replicate's API, or you can recreate this codebase from scratch by following the guide at [replicate.com/docs/get-started/nextjs](https://replicate.com/docs/get-started/nextjs)
 
+## Funcionalidades Adicionadas
+
+Esta versão do projeto inclui as seguintes funcionalidades adicionais:
+
+- **Múltiplos Modelos de IA**:
+  - **Flux Schnell**: Modelo rápido, ideal para testes e protótipos
+  - **Flux 1.1 Pro**: Modelo de alta qualidade com opções avançadas
+  - **Flux Dev**: Modelo experimental com opções avançadas de configuração
+- **Galeria de Imagens**: Armazena e exibe as imagens geradas anteriormente
+- **Opções Avançadas de Geração**:
+  - Diversos estilos de imagem:
+    - Realista, Fotorrealista
+    - Anime, Pixar, Disney, Studio Ghibli
+    - 3D Render, Low Poly, Isométrico
+    - Pixel Art, História em Quadrinhos
+    - Pintura, Aquarela, Pintura a Óleo
+    - Esboço, Ilustração
+    - Cyberpunk, Steampunk, Vaporwave, Synthwave
+  - Múltiplas proporções de aspecto (1:1, 16:9, 21:9, etc.)
+  - Escolha do formato de saída (WebP, JPG, PNG)
+  - Geração de múltiplas imagens de uma vez (Flux Schnell)
+  - Controle de qualidade de saída (Flux 1.1 Pro e Flux Dev)
+  - Ajuste de tolerância de segurança (Flux 1.1 Pro)
+  - Melhoramento automático de prompts (Flux 1.1 Pro)
+  - Configurações avançadas no Flux Dev:
+    - Guidance: controle da fidelidade ao prompt
+    - Megapixels: controle da resolução da imagem
+    - Força do prompt: intensidade da influência do texto
+    - Passos de inferência: equilíbrio entre velocidade e qualidade
+    - Modo rápido: geração mais rápida com qualidade reduzida
+- **Interface melhorada**: 
+  - Design mais moderno e responsivo
+  - Seletor de modelos com interface intuitiva
+  - Controles deslizantes para ajustes finos
+  - Download de imagens com um clique (nome do arquivo baseado no prompt e modelo)
+- **Histórico de prompts**: Possibilidade de reutilizar prompts anteriores
+
 ## Noteworthy files
 
 - [app/page.js](app/page.js) - React frontend that renders the home page in the browser
 - [app/api/predictions/route.js](app/api/predictions/route.js) - API endpoint that calls Replicate's API to create a prediction
 - [app/api/predictions/[id]/route.js](app/api/predictions/[id]/route.js) - API endpoint that calls Replicate's API to get the prediction result
 - [app/api/webhooks/route.js](app/api/webhooks/route.js) - API endpoint that receives and validates webhooks from Replicate
+- [app/components/Gallery.js](app/components/Gallery.js) - Component that displays the gallery of previously generated images
+- [app/components/LoadingSpinner.js](app/components/LoadingSpinner.js) - Loading indicator component
+- [app/components/PromptOptions.js](app/components/PromptOptions.js) - Component for image generation options
+- [app/components/ModelSelector.js](app/components/ModelSelector.js) - Component for selecting the AI model
+- [app/components/StylePreview.js](app/components/StylePreview.js) - Component for displaying style previews
 
 ## Running the app
 

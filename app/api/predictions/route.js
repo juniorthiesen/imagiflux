@@ -44,3 +44,26 @@ export async function POST(request) {
 
   return NextResponse.json(prediction, { status: 201 });
 }
+
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  if (!id) {
+    return NextResponse.json(
+      { detail: "ID da previsão é obrigatório" },
+      { status: 400 }
+    );
+  }
+
+  try {
+    const prediction = await replicate.predictions.get(id);
+    return NextResponse.json(prediction);
+  } catch (error) {
+    console.error("Erro ao buscar previsão:", error);
+    return NextResponse.json(
+      { detail: error.message || "Erro interno do servidor" },
+      { status: 500 }
+    );
+  }
+}

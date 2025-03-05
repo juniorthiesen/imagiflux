@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "./globals.css";
 
 export default function RootLayout({
   // Layouts must accept a children prop.
