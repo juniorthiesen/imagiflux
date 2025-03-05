@@ -1,6 +1,6 @@
 ## Getting started with Next.js and Replicate
 
-<img width="100%" alt="iguana" src="https://github.com/replicate/cog/assets/2289/1d8d005c-e4a1-4a9d-bd4c-b573fc121b37">
+
 
 This is a [Next.js](https://nextjs.org/) template project that's preconfigured to work with Replicate's API.
 
